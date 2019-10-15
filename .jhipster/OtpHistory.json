@@ -1,0 +1,70 @@
+{
+    "name": "OtpHistory",
+    "fields": [
+        {
+            "fieldName": "createdBy",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "expiredDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "memberEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "procType",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tokenText",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "token",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "retryCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "retryMax",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "requestData",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "memberAccount",
+            "otherEntityRelationshipName": "otpHistory",
+            "relationshipName": "memberAccount",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191015041832",
+    "entityTableName": "otp_history",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

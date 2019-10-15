@@ -1,0 +1,54 @@
+{
+    "name": "Tax",
+    "fields": [
+        {
+            "fieldName": "taxCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "shortDesc",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 30
+        },
+        {
+            "fieldName": "longDesc",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "investorIndividu",
+            "otherEntityRelationshipName": "tax",
+            "relationshipName": "investorIndividu"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "investorInstitution",
+            "otherEntityRelationshipName": "tax",
+            "relationshipName": "investorInstitution"
+        }
+    ],
+    "changelogDate": "20191015041849",
+    "entityTableName": "tax",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

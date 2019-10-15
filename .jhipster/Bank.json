@@ -1,0 +1,76 @@
+{
+    "name": "Bank",
+    "fields": [
+        {
+            "fieldName": "bankCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "bankName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 60
+        },
+        {
+            "fieldName": "initialName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 60
+        },
+        {
+            "fieldName": "biCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 3
+        },
+        {
+            "fieldName": "swiftCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "fundRaiserBank",
+            "otherEntityRelationshipName": "bank",
+            "relationshipName": "fundRaiserBank"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "companyBank",
+            "otherEntityRelationshipName": "bank",
+            "relationshipName": "companyBank"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "investorBank",
+            "otherEntityRelationshipName": "bank",
+            "relationshipName": "investorBank"
+        }
+    ],
+    "changelogDate": "20191015041844",
+    "entityTableName": "bank",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

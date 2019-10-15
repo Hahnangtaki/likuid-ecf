@@ -1,0 +1,374 @@
+entity MemberAccount {
+	memberEmail String,
+    phoneNumber String,
+    memberSince LocalDate,
+    memberStatus Integer
+}
+
+entity OtpHistory {
+	createdBy Integer,
+    createdDate ZonedDateTime,
+    expiredDate ZonedDateTime,
+    memberEmail String,
+    phoneNumber String,
+    procType Integer,
+    tokenText String,
+    token String,
+    retryCount Integer,
+    retryMax Integer,
+    requestData Blob
+}
+
+entity Category { //relationship DONE
+	catCode String,
+    catName String
+}
+
+entity CampaignCategory { //relationship DONE
+}
+
+entity FundRaiser { //relationship DONE
+	companyName String maxlength(100),
+    yearFounded Integer,
+    website String maxlength(100)
+}
+
+entity Currency { //relationship DONE
+	currencyCode String maxlength(5),
+    currencyName String maxlength(100),
+    currencySymbol String maxlength(5)
+}
+
+entity Campaign { //relationship DONE
+	campaignCode String maxlength(10),
+    campaignName String maxlength(100),
+    campaignDesc String maxlength(100),
+    investmentType String maxlength(10)
+    offerDate LocalDate,
+    deadlineDate LocalDate,
+    price Double,
+    fundTarget Double,
+    fundRaised Double,
+    fundPaid Double,
+    qtyTarget Long,
+    qtyRaised Long,
+    estRoiMin Double,
+    estRoiMax Double,
+    prospectusFile Blob,
+    status String    
+}
+
+entity CampaignPayment { //relationship DONE
+	paymentCode String maxlength(10),
+    paymentDesc String maxlength(200),
+    amount Double,
+    status String maxlength(1)
+}
+
+entity CampaignTransaction { //relationship DONE
+	transCode String maxlength(10),
+    transDesc String maxlength(200),
+    transDate LocalDate,
+    transType String maxlength(1),
+    qty Long,
+    amount Double,
+    uniqueCharges Double,
+    netAmount Double,
+    status String maxlength(1)
+}
+
+entity Investor { //relationship DONE
+	investorCode String maxlength(10),
+    investorName String maxlength(100),
+    investorType String maxlength(1)
+}
+
+entity InvestorBank { //relationship DONE
+	bankAccountNo String maxlength(60),
+    bankAccountName String maxlength(100),
+    bankBranch String maxlength(100),
+    status String maxlength(1)
+}
+
+entity CompanyBank { //relationship DONE
+	bankAccountNo String maxlength(60),
+    bankAccountName String maxlength(100),
+    bankBranch String maxlength(100),
+    status String maxlength(1)
+}
+
+entity FundRaiserBank { //relationship DONE
+	bankAccountNo String maxlength(60),
+    bankAccountName String maxlength(100),
+    bankBranch String maxlength(100),
+    status String maxlength(1)
+}
+
+entity Bank { //relationship DONE
+	bankCode String maxlength(10),
+    bankName String maxlength(60),
+    initialName String maxlength(60),
+    biCode String maxlength(3),
+    swiftCode String maxlength(20)
+}
+
+entity InvestorAuthorizePerson { //relationship DONE
+	firstName String maxlength(35),
+    middleName String maxlength(35),
+    lastName String maxlength(35),
+    position String maxlength(100),
+    ktp String maxlength(25),
+    ktpExpDate LocalDate,
+    npwp String maxlength(15),
+    npwpRegDate LocalDate,
+    passport String maxlength(25),
+    passportExpDate LocalDate,
+    kitas String maxlength(30),
+    kitasExpDate LocalDate
+}
+
+entity CampaignInvestor { //relationship DONE
+	qty Long,
+    fundAmount Double
+}
+
+entity InvestorInstitution { //relationship DONE
+	sid String maxlength(15),
+    companyName String maxlength(100),
+    bicCode String maxlength(20),
+    legalDomicileId Long,
+    npwp String maxlength(100),
+    npwpRegDate LocalDate,
+    skd String maxlength(30),
+    skdExpDate LocalDate,
+    companyEstablishPlce String maxlength(10),
+    companyEstablishDate LocalDate,
+    businessType String maxlength(1),
+    companyChracteristic String maxlength(1),
+    fundSource String maxlength(30),
+    fundSourceText String maxlength(120),
+    articleAssociation String maxlength(120),
+    bussinessRegNo String maxlength(120),
+    financialAsset1 Double,
+    financialAsset2 Double,
+    financialAsset3 Double,
+    operatingProfit1 Double,
+    operatingProfit2 Double,
+    operatingProfit3 Double,
+    description String maxlength(100),
+    investmentObjective String maxlength(100),
+    directSid String maxlength(15),
+    assetOwner String maxlength(1),
+    supDocType String maxlength(1),
+    supDocExpDate LocalDate
+}
+
+entity InvestorIndividu { //relationship DONE
+	sid String maxlength(15),
+    firstName String maxlength(35),
+    middleName String maxlength(35),
+    lastName String maxlength(35),
+    nationalityId Long,
+    ktp String maxlength(25),
+    ktpExpDate LocalDate,
+    npwp String maxlength(15),
+    npwpRegDate LocalDate,
+    passport String maxlength(25),
+    passportExpDate LocalDate,
+    kitas String maxlength(30),
+    kitasExpDate LocalDate,
+    birthPlace String maxlength(100),
+    birthDate LocalDate,
+    sex String maxlength(1),
+    maritalStatus String maxlength(1),
+    spouseName String maxlength(100),
+    heir String maxlength(120),
+    heirRalation String maxlength(120),
+    educationBackground String maxlength(1),
+    occupation String maxlength(1),
+    natureOfBusiness String maxlength(120),
+    annualIncome Double,
+    fundSource String maxlength(30),
+    fundSourceText String maxlength(120),
+    description String maxlength(100),
+    investmentObjective String maxlength(10),
+    motherMaidenName String maxlength(100),
+    directSid String maxlength(15),
+    assetOwner String maxlength(1),
+    authPersonKtpRegDate LocalDate
+}
+
+entity Tax { //relationship DONE
+	taxCode String maxlength(10),
+    shortDesc String maxlength(30),
+    longDesc String maxlength(100)
+}
+
+entity InvestorAddress { //relationship DONE
+	addressType String maxlength(1),
+    address1 String maxlength(60),
+    address2 String maxlength(60),
+    address3 String maxlength(60),
+    postalCode String maxlength(5),
+    phone String maxlength(30),
+    mobilePhone String maxlength(30),
+    email String maxlength(256),
+    fax String maxlength(30)
+}
+
+entity Country { //relationship DONE
+	countryCode String maxlength(10),
+    countryName String maxlength(60),
+    nationality String maxlength(60)
+}
+
+entity Province { //relationship DONE
+	provinceCode String maxlength(10),
+    provinceName String maxlength(60)
+}
+
+entity City { //relationship DONE
+	cityCode String maxlength(10),
+    cityName String maxlength(60)
+}
+
+relationship ManyToOne {
+	OtpHistory to MemberAccount
+}
+
+/*
+relationship OneToMany {
+	MemberAccount to OtpHistory
+} 
+*/
+
+relationship OneToOne {
+	Investor to InvestorInstitution
+}
+
+relationship OneToOne {
+	Investor to InvestorIndividu
+}
+
+relationship OneToMany {
+	FundRaiserBank to CampaignPayment
+}
+
+relationship OneToMany {
+	Campaign to CampaignPayment
+}
+
+relationship OneToMany {
+	CompanyBank to CampaignPayment
+}
+
+relationship OneToMany {
+	FundRaiser to FundRaiserBank
+}
+
+relationship OneToMany {
+	Bank to FundRaiserBank
+}
+
+relationship OneToMany {
+	Bank to CompanyBank
+}
+
+relationship OneToMany {
+	Bank to InvestorBank
+}
+
+relationship OneToMany {
+	Currency to FundRaiserBank
+}
+
+relationship OneToMany {
+	Currency to CompanyBank
+}
+
+relationship OneToMany {
+	Currency to InvestorBank
+}
+
+relationship OneToMany {
+	Investor to InvestorBank
+}
+
+relationship OneToMany {
+	Province to City
+}
+
+relationship OneToMany {
+	City to InvestorAddress
+}
+
+relationship OneToMany {
+	Country to Province
+}
+
+relationship OneToMany {
+	Province to InvestorAddress
+}
+
+relationship OneToMany {
+	Country to InvestorAddress
+}
+
+relationship OneToMany {
+	Investor to InvestorAddress
+}
+
+relationship OneToMany {
+	Tax to InvestorIndividu
+}
+
+relationship OneToMany {
+	Tax to InvestorInstitution
+}
+
+relationship OneToMany {
+	Investor to InvestorAuthorizePerson
+}
+
+relationship OneToMany {
+	Investor to CampaignInvestor
+}
+
+relationship OneToMany {
+	Campaign to CampaignInvestor
+}
+
+relationship OneToMany {
+	Investor to CampaignTransaction
+}
+
+relationship OneToMany {
+	Campaign to CampaignTransaction
+}
+
+relationship OneToMany {
+	Currency to Campaign
+}
+
+relationship OneToMany {
+	Category to CampaignCategory 
+}
+
+relationship OneToMany {
+	Campaign to CampaignCategory
+}
+
+relationship OneToMany {
+	FundRaiser to Campaign
+}
+
+// Set pagination options
+//paginate Nasabah with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+angularSuffix * with mySuffix

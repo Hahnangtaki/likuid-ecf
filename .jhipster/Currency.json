@@ -1,0 +1,66 @@
+{
+    "name": "Currency",
+    "fields": [
+        {
+            "fieldName": "currencyCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 5
+        },
+        {
+            "fieldName": "currencyName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "currencySymbol",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 5
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "fundRaiserBank",
+            "otherEntityRelationshipName": "currency",
+            "relationshipName": "fundRaiserBank"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "companyBank",
+            "otherEntityRelationshipName": "currency",
+            "relationshipName": "companyBank"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "investorBank",
+            "otherEntityRelationshipName": "currency",
+            "relationshipName": "investorBank"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "campaign",
+            "otherEntityRelationshipName": "currency",
+            "relationshipName": "campaign"
+        }
+    ],
+    "changelogDate": "20191015041836",
+    "entityTableName": "currency",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
