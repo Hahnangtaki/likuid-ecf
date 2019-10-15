@@ -1,0 +1,31 @@
+{
+    "name": "CampaignCategory",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "category",
+            "otherEntityRelationshipName": "campaignCategory",
+            "relationshipName": "category",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "campaign",
+            "otherEntityRelationshipName": "campaignCategory",
+            "relationshipName": "campaign",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191015060725",
+    "entityTableName": "campaign_category",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

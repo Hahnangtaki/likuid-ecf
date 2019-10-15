@@ -1,0 +1,50 @@
+{
+    "name": "FundRaiser",
+    "fields": [
+        {
+            "fieldName": "companyName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "yearFounded",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "website",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "fundRaiserBank",
+            "otherEntityRelationshipName": "fundRaiser",
+            "relationshipName": "fundRaiserBank"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "campaign",
+            "otherEntityRelationshipName": "fundRaiser",
+            "relationshipName": "campaign"
+        }
+    ],
+    "changelogDate": "20191015060726",
+    "entityTableName": "fund_raiser",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

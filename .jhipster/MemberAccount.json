@@ -1,0 +1,40 @@
+{
+    "name": "MemberAccount",
+    "fields": [
+        {
+            "fieldName": "memberEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "memberSince",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "memberStatus",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "otpHistory",
+            "otherEntityRelationshipName": "memberAccount",
+            "relationshipName": "otpHistory"
+        }
+    ],
+    "changelogDate": "20191015060722",
+    "entityTableName": "member_account",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

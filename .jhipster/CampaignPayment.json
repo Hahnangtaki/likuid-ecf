@@ -1,0 +1,67 @@
+{
+    "name": "CampaignPayment",
+    "fields": [
+        {
+            "fieldName": "paymentCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "paymentDesc",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 200
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "fundRaiserBank",
+            "otherEntityRelationshipName": "campaignPayment",
+            "relationshipName": "fundRaiserBank",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "campaign",
+            "otherEntityRelationshipName": "campaignPayment",
+            "relationshipName": "campaign",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "companyBank",
+            "otherEntityRelationshipName": "campaignPayment",
+            "relationshipName": "companyBank",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191015060729",
+    "entityTableName": "campaign_payment",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

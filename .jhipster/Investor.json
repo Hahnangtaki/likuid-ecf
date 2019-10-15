@@ -1,0 +1,88 @@
+{
+    "name": "Investor",
+    "fields": [
+        {
+            "fieldName": "investorCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "investorName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "investorType",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "investorInstitution",
+            "otherEntityRelationshipName": "investor",
+            "relationshipName": "investorInstitution",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "investorIndividu",
+            "otherEntityRelationshipName": "investor",
+            "relationshipName": "investorIndividu",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "investorBank",
+            "otherEntityRelationshipName": "investor",
+            "relationshipName": "investorBank"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "investorAddress",
+            "otherEntityRelationshipName": "investor",
+            "relationshipName": "investorAddress"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "investorAuthorizePerson",
+            "otherEntityRelationshipName": "investor",
+            "relationshipName": "investorAuthorizePerson"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "campaignInvestor",
+            "otherEntityRelationshipName": "investor",
+            "relationshipName": "campaignInvestor"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "campaignTransaction",
+            "otherEntityRelationshipName": "investor",
+            "relationshipName": "campaignTransaction"
+        }
+    ],
+    "changelogDate": "20191015060731",
+    "entityTableName": "investor",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

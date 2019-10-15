@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity InvestorBank.
+    -->
+    <changeSet id="20191015060732-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="bank_id"
+                                 baseTableName="investor_bank"
+                                 constraintName="fk_investor_bank_bank_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bank"/>
+
+        <addForeignKeyConstraint baseColumnNames="currency_id"
+                                 baseTableName="investor_bank"
+                                 constraintName="fk_investor_bank_currency_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="currency"/>
+
+        <addForeignKeyConstraint baseColumnNames="investor_id"
+                                 baseTableName="investor_bank"
+                                 constraintName="fk_investor_bank_investor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="investor"/>
+
+    </changeSet>
+</databaseChangeLog>
