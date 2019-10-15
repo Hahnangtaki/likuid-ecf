@@ -1,0 +1,84 @@
+{
+    "name": "CampaignTransaction",
+    "fields": [
+        {
+            "fieldName": "transCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "transDesc",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 200
+        },
+        {
+            "fieldName": "transDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "transType",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "qty",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "uniqueCharges",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "netAmount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "investor",
+            "otherEntityRelationshipName": "campaignTransaction",
+            "relationshipName": "investor",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "campaign",
+            "otherEntityRelationshipName": "campaignTransaction",
+            "relationshipName": "campaign",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191015060730",
+    "entityTableName": "campaign_transaction",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

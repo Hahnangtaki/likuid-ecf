@@ -1,0 +1,47 @@
+{
+    "name": "City",
+    "fields": [
+        {
+            "fieldName": "cityCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "cityName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 60
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "investorAddress",
+            "otherEntityRelationshipName": "city",
+            "relationshipName": "investorAddress"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "province",
+            "otherEntityRelationshipName": "city",
+            "relationshipName": "province",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191015060744",
+    "entityTableName": "city",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

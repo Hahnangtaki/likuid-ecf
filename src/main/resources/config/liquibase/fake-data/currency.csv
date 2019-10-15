@@ -1,0 +1,11 @@
+id;currency_code;currency_name;currency_symbol
+1;MKD;Swedish Krona;L
+2;ARS;Pa'anga;¥
+3;GBP;Won;$
+4;BGN;Euro;ƒ
+5;CUP C;Codes specifically reserved for testing purposes;лв
+6;USD;North Korean Won;$
+7;SAR;Som;ман
+8;COP C;European Unit of Account 17(E.U.A.-17);CHF
+9;KWD;Euro;₨
+10;BIF;Swedish Krona;₡
