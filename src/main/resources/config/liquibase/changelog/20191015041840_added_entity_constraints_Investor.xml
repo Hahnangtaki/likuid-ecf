@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Investor.
+    -->
+    <changeSet id="20191015041840-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="investor_institution_id"
+                                 baseTableName="investor"
+                                 constraintName="fk_investor_investor_institution_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="investor_institution"/>
+
+        <addForeignKeyConstraint baseColumnNames="investor_individu_id"
+                                 baseTableName="investor"
+                                 constraintName="fk_investor_investor_individu_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="investor_individu"/>
+
+    </changeSet>
+</databaseChangeLog>

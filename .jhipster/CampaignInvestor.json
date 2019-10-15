@@ -1,0 +1,40 @@
+{
+    "name": "CampaignInvestor",
+    "fields": [
+        {
+            "fieldName": "qty",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "fundAmount",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "investor",
+            "otherEntityRelationshipName": "campaignInvestor",
+            "relationshipName": "investor",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "campaign",
+            "otherEntityRelationshipName": "campaignInvestor",
+            "relationshipName": "campaign",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191015041846",
+    "entityTableName": "campaign_investor",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
